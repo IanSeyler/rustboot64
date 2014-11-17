@@ -2,17 +2,17 @@
 
 A tiny 64-bit "kernel" written in Rust.
 
-I was inspired to download Rust and try to do this after seeing [rustboot](https://github.com/charliesome/rustboot) which was limited to 32-bit operation.
+I was inspired to download Rust and try to do this after seeing [rustboot](https://github.com/charliesome/rustboot) which was limited to 32-bit operation on a single CPU.
 
-rustboot64 makes use of [Pure64](https://github.com/returninfinity/pure64) to get the system into 64-bit mode, as well as enabling all available CPU cores.
+rustboot64 makes use of [Pure64](https://github.com/returninfinity/pure64) to get the system into 64-bit mode, gather required details for operations, as well as enabling all available CPU cores.
 
-It paints the screen bright blue and then hangs. That's it:
+At the moment, it paints the screen bright blue and then hangs. That's it:
 
 ![](http://i.imgur.com/FGGnUJ2.png)
 
 ## Setup
 
-You need a few things to run rustboot:
+You need a few things to run rustboot64:
 
 1. `qemu`
 2. `ld`
