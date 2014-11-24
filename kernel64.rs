@@ -4,7 +4,7 @@
 
 #![no_std]
 #![allow(ctypes)]
-
+#![allow(dead_code)]
 #![feature(lang_items)]
 #[lang="sized"]
 trait Sized {}
