@@ -3,16 +3,18 @@
 // rustc -O --crate-type lib -o kernel64.o --emit obj kernel64.rs
 // ld -T app.ld -o kernel64.sys kernel64.o
 
+const BUF_VIDEO: *mut u16 = 0xb8000 as *mut u16;
+
 #[no_mangle]
 pub fn main() {
     clear_screen(Color::LightBlue);
     loop {
-		// Loop forever
+        // Loop forever
     }
 }
 
 #[derive(Copy,Clone)]
-enum Color {
+pub enum Color {
     Black       = 0,
     Blue        = 1,
     Green       = 2,
@@ -34,7 +36,7 @@ enum Color {
 fn clear_screen(background: Color) {
     for x in 0 .. 80*25 {
         unsafe {
-            *((0xb8000 + x * 2) as *mut u16) = (background as u16) << 12;
+            *BUF_VIDEO.offset(x * 2) = (background as u16) << 12;
         }
     }
 }
