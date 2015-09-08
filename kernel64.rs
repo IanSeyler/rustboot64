@@ -14,7 +14,7 @@ pub fn main() {
 }
 
 #[derive(Copy,Clone)]
-enum Color {
+pub enum Color {
     Black       = 0,
     Blue        = 1,
     Green       = 2,
